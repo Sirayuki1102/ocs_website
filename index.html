@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[サーバー名] 公式サイト | まったり生活系サバイバル</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                [サーバー名]
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>[サーバー名] 公式サイト</h1>
+                <p class="lead">はじめてでも安心！みんなでつくる、まったり生活系サバイバル</p>
+                <p class="sub">運営スタッフとの距離が近くてアットホーム！マイクラを始めたばかりの人も気兼ねなく楽しめる統合版サーバーです。</p>
+                <div class="hero-buttons">
+                    <a href="#connection" class="btn btn-primary">サーバーに参加する（接続情報へ）</a>
+                    <a href="#" class="btn btn-secondary">Discordに参加</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features bg-light">
+            <div class="container">
+                <h2 class="section-title">サーバーの3つの特徴</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">🔰</div>
+                        <h3>初心者サポートが手厚い</h3>
+                        <p>「コマンドがわからない」「どこに家を建てたらいい？」そんな疑問も安心。スタッフや先輩プレイヤーが優しくフォローします。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>運営と顔見知りだから安心</h3>
+                        <p>アットホームな雰囲気が自慢！運営が日常的に遊んでいるのでトラブル対応が早く、荒らし対策もバッチリです。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🌿</div>
+                        <h3>誰でも遊べる「バニラベース」</h3>
+                        <p>複雑なルールは一切なし！いつものマイクラそのままの感覚で、建築や冒険を自分のペースで楽しめます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="connection">
+            <div class="container">
+                <h2 class="section-title">サーバー接続情報</h2>
+                <div class="connection-info">
+                    <div class="info-row">
+                        <span class="info-label">サーバー名</span>
+                        <span class="info-value">[サーバー名]</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">IPアドレス</span>
+                        <span class="info-value">
+                            play.example.com
+                            <button class="copy-btn" onclick="copyToClipboard('play.example.com')">コピー</button>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ポート</span>
+                        <span class="info-value">
+                            19132
+                            <button class="copy-btn" onclick="copyToClipboard('19132')">コピー</button>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">対応環境</span>
+                        <span class="info-value text-small">統合版（Switch / スマホ / PS4・5 / Xbox / PC）最新バージョン</span>
+                    </div>
+                    <div class="text-center" style="margin-top: 25px;">
+                        <a href="guide.html" class="btn btn-primary" style="width: 100%; max-width: 400px;">詳しい接続手順・初心者ガイドはこちら</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container">
+                <h2 class="section-title">最新の活動ピックアップ</h2>
+                
+                <h3 class="subsection-title">最新の作業報告書</h3>
+                <div class="grid" style="margin-bottom: 40px;">
+                    <a href="report.html" class="card report-card-mini">
+                        <div class="report-meta">2026/08/01 <span class="badge badge-blue">[日課報告]</span></div>
+                        <h4>共有トラップタワーのドロップ品回収およびチェスト整理...</h4>
+                        <div class="report-author">投稿者: Alex_Craft</div>
+                    </a>
+                    <a href="report.html" class="card report-card-mini">
+                        <div class="report-meta">2026/08/01 <span class="badge badge-green">[施設建設]</span></div>
+                        <h4>中央整地エリアの湧きつぶし作業。南側区画の松明設置...</h4>
+                        <div class="report-author">投稿者: Steve_Build</div>
+                    </a>
+                </div>
+                
+                <h3 class="subsection-title">運営記録 (Dev Log)</h3>
+                <div class="grid" style="margin-bottom: 40px;">
+                    <a href="blog.html" class="card blog-card">
+                        <img src="https://via.placeholder.com/800x400?text=Update" alt="Update" class="blog-img">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>2026.08.01</span>
+                                <span class="blog-tag">[アプデ]</span>
+                            </div>
+                            <h3>新生活エリアの開放とスポーン地点の改修を行いました！</h3>
+                            <div class="blog-author">投稿者：運営スタッフ</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title">利用ルール</h2>
+                <ul class="rules-list">
+                    <li><span class="rule-number">1</span>みんなで仲良く！</li>
+                    <li><span class="rule-number">2</span>横取り・荒らしNG！</li>
+                    <li><span class="rule-number">3</span>困ったら即相談！</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast">コピーしました！</div>
+    <script src="main.js"></script>
+</body>
+</html>

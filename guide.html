@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初心者ガイド & 接続方法 | [サーバー名]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                [サーバー名]
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html" class="active">初心者ガイド</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>初心者ガイド & 接続方法</h1>
+                <p>初めてサーバーに参加する方へ、接続から遊び方までのステップをご案内します。</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title">クイック接続ガイド</h2>
+                <div class="connection-info">
+                    <p class="text-center" style="margin-bottom: 20px;">
+                        統合版（最新バージョン）を起動し、「サーバーを追加」から以下の情報を入力してください。
+                    </p>
+                    <div class="info-row">
+                        <span class="info-label">サーバー名</span>
+                        <span class="info-value">[サーバー名] (自由に入力可)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">IPアドレス</span>
+                        <span class="info-value">
+                            play.example.com
+                            <button class="copy-btn" onclick="copyToClipboard('play.example.com')">コピー</button>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ポート</span>
+                        <span class="info-value">
+                            19132
+                            <button class="copy-btn" onclick="copyToClipboard('19132')">コピー</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container">
+                <h2 class="section-title">サーバーに入ったらまずやること</h2>
+                <div class="step-list">
+                    <div class="card step-item">
+                        <div class="step-number">Step 1</div>
+                        <div class="step-content">
+                            <h3>初期スポーン地点の案内看板を確認</h3>
+                            <p>サーバーに入ると、安全な初期スポーン地点から始まります。まずは近くにある案内看板を読んで、基本的なルールや施設の場所を確認しましょう。</p>
+                        </div>
+                    </div>
+                    <div class="card step-item">
+                        <div class="step-number">Step 2</div>
+                        <div class="step-content">
+                            <h3>近くにいるスタッフやプレイヤーにあいさつしてみよう！</h3>
+                            <p>アットホームな雰囲気が特徴のサーバーです。チャットで「こんにちは！」と挨拶すれば、先輩プレイヤーが温かく迎えてくれますよ。</p>
+                        </div>
+                    </div>
+                    <div class="card step-item">
+                        <div class="step-number">Step 3</div>
+                        <div class="step-content">
+                            <h3>自分の生活エリアを決めて自由なマイクラライフをスタート！</h3>
+                            <p>スポーン地点から離れて、建築や農業に適したお気に入りの場所を見つけましょう。複雑なルールはないので、バニラ本来の自由なサバイバルを楽しんでください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container text-center">
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <div class="card-icon" style="font-size: 3rem;">💬</div>
+                    <h3>サポート & コミュニティ</h3>
+                    <p style="margin-bottom: 24px;">「質問や困りごとは公式Discordへ！」<br>プレイヤー同士の交流や、運営への問い合わせはDiscordで行っています。</p>
+                    <a href="#" class="btn btn-secondary">Discordに参加する</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast">コピーしました！</div>
+    <script src="main.js"></script>
+</body>
+</html>
