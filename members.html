@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参加者一覧 | [サーバー名] 公式サイト</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            border: 3px solid var(--primary-light);
+        }
+        .member-name {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+        .member-role {
+            margin-bottom: 15px;
+        }
+        .member-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: white;
+            font-weight: bold;
+        }
+        .badge-red { background-color: #ef4444; }
+        .badge-blue { background-color: #3b82f6; }
+        .badge-green { background-color: #22c55e; }
+        .badge-yellow { background-color: #eab308; }
+        .badge-purple { background-color: #a855f7; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                [サーバー名]
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+                <a href="members.html" class="active">参加者一覧</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <h1>参加者一覧</h1>
+                <p>サーバーで一緒に遊んでいるメンバーの紹介です</p>
+            </div>
+        </div>
+
+        <section class="bg-light">
+            <div class="container">
+                <h2 class="section-title">運営チーム</h2>
+                <div class="grid">
+                    <div class="card text-center">
+                        <img src="https://minotar.net/helm/Steve/100.png" alt="Steve" class="member-avatar">
+                        <h3 class="member-name">Admin_Steve</h3>
+                        <div class="member-role"><span class="badge badge-red">管理人</span></div>
+                        <p class="member-desc">サーバーの管理者です。困ったことがあればDiscordでメンションしてください！</p>
+                    </div>
+                    <div class="card text-center">
+                        <img src="https://minotar.net/helm/Alex/100.png" alt="Alex" class="member-avatar">
+                        <h3 class="member-name">Mod_Alex</h3>
+                        <div class="member-role"><span class="badge badge-blue">モデレーター</span></div>
+                        <p class="member-desc">イベント企画や荒らし対策を担当しています。楽しく遊びましょう！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title">プレイヤー</h2>
+                <div class="grid">
+                    <div class="card text-center">
+                        <img src="https://minotar.net/helm/Notch/100.png" alt="Player1" class="member-avatar">
+                        <h3 class="member-name">Build_Master</h3>
+                        <div class="member-role"><span class="badge badge-green">建築家</span></div>
+                        <p class="member-desc">お城や村を作るのが好きです。見学大歓迎！</p>
+                    </div>
+                    <div class="card text-center">
+                        <img src="https://minotar.net/helm/Herobrine/100.png" alt="Player2" class="member-avatar">
+                        <h3 class="member-name">Redstone_Pro</h3>
+                        <div class="member-role"><span class="badge badge-yellow">レッドストーン職人</span></div>
+                        <p class="member-desc">自動化施設を作るのが得意です。トラップタワー建設中。</p>
+                    </div>
+                    <div class="card text-center">
+                        <img src="https://minotar.net/helm/MHF_Pig/100.png" alt="Player3" class="member-avatar">
+                        <h3 class="member-name">Farm_Lover</h3>
+                        <div class="member-role"><span class="badge badge-purple">農家</span></div>
+                        <p class="member-desc">ひたすら畑を耕しています。食料支援はお任せを。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
