@@ -4,7 +4,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ワールド作業報告書 (Daily Reports) | [サーバー名]</title>
+    <title>ワールド作業報告書 (Daily Reports) | OCS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,11 +12,12 @@
         <div class="container nav-inner">
             <a href="index.html" class="logo">
                 <span class="logo-icon">🌿</span>
-                [サーバー名]
+                OCS
             </a>
             <nav class="nav-links">
                 <a href="index.html">ホーム</a>
                 <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html">管理一覧</a>
                 <a href="report.html" class="active">作業報告書</a>
                 <a href="blog.html">運営記録</a>
                 <a href="members.html">参加者一覧</a>
@@ -35,46 +36,137 @@
         <!-- 報告書ログ一覧 -->
         <section>
             <div class="container">
-                <h2 class="section-title">報告書ログ一覧</h2>
-                <div class="report-list">
-                    <!-- レポート1 -->
-                    <div class="report-row">
-                        <div class="report-header">
-                            <div class="report-date">2026/08/01</div>
-                            <div class="badge badge-blue">[日課報告]</div>
-                            <div class="report-author">投稿者: Alex_Craft</div>
-                            <div class="report-status status-complete">完了 (100%)</div>
-                        </div>
-                        <div class="report-body">
-                            <p>共有トラップタワーのドロップ品回収およびチェスト整理完了。骨粉・矢を大量補充しておきました！</p>
-                        </div>
-                    </div>
-                    
-                    <!-- レポート2 -->
-                    <div class="report-row">
-                        <div class="report-header">
-                            <div class="report-date">2026/08/01</div>
-                            <div class="badge badge-green">[施設建設]</div>
-                            <div class="report-author">投稿者: Steve_Build</div>
-                            <div class="report-status status-progress">進行中 (60%)</div>
-                        </div>
-                        <div class="report-body">
-                            <p>中央整地エリアの湧きつぶし作業。南側区画の松明設置が完了しました。明日は北側をやります。</p>
-                        </div>
-                    </div>
+                <h2 class="section-title">報告ログ一覧</h2>
+                <div class="report-list" id="report-list">
 
-                    <!-- レポート3 -->
-                    <div class="report-row">
-                        <div class="report-header">
-                            <div class="report-date">2026/07/31</div>
-                            <div class="badge badge-orange">[資材補充]</div>
-                            <div class="report-author">投稿者: Yuto_MC</div>
-                            <div class="report-status status-complete">完了 (100%)</div>
+                    <!-- カード1：緊急 -->
+                    <a href="report-detail.html?id=1" class="report-card is-urgent">
+                        <div class="report-card-header">
+                            <div class="report-meta-info">
+                                <span class="report-date">2026/08/11</span>
+                                <span class="report-author">👤 Alex_Craft</span>
+                            </div>
+                            <span class="status-badge badge-urgent">🚨 緊急</span>
                         </div>
-                        <div class="report-body">
-                            <p>ブランチマイニングにて鉄インゴット3スタック、石炭5スタックを共有倉庫Bに納品しました。</p>
+                        <div class="report-card-body">
+                            <div class="section-completed">
+                                <div class="section-label-sub">【完了した作業】</div>
+                                <ul class="completed-list">
+                                    <li><span class="completed-icon">✓</span> 共有トラップタワーのドロップ品回収およびチェスト整理完了</li>
+                                    <li><span class="completed-icon">✓</span> 骨粉・矢を共有倉庫Aに補給（各10スタック）</li>
+                                </ul>
+                            </div>
+                            <div class="section-next-action">
+                                <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                                <ul class="todo-list">
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>トラップタワー地下の湧き潰し作業（松明が不足中！木炭・石炭の寄付大歓迎です）</span>
+                                    </li>
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>クロック回路の断線箇所の点検と動作修復</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <!-- カード2：手伝い募集 -->
+                    <a href="report-detail.html?id=2" class="report-card">
+                        <div class="report-card-header">
+                            <div class="report-meta-info">
+                                <span class="report-date">2026/08/10</span>
+                                <span class="report-author">👤 Steve_Build</span>
+                            </div>
+                            <span class="status-badge badge-help">🤝 手伝い募集</span>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="section-completed">
+                                <div class="section-label-sub">【完了した作業】</div>
+                                <ul class="completed-list">
+                                    <li><span class="completed-icon">✓</span> 中央広場・西側区画の土ブロック掘削＆大規模整地完了</li>
+                                    <li><span class="completed-icon">✓</span> 作業用仮設チェストと作業台の設置</li>
+                                </ul>
+                            </div>
+                            <div class="section-next-action">
+                                <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                                <ul class="todo-list">
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>西区画の外壁・石垣づくり（丸石・石レンガを大量に使うので建築補助をお願いします！）</span>
+                                    </li>
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>メインストリートからの接続道路の舗装（滑らかな石ブロック）</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- カード3：作業中 -->
+                    <a href="report-detail.html?id=3" class="report-card">
+                        <div class="report-card-header">
+                            <div class="report-meta-info">
+                                <span class="report-date">2026/08/08</span>
+                                <span class="report-author">👤 Yuto_MC</span>
+                            </div>
+                            <span class="status-badge badge-progress">🚧 作業中</span>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="section-completed">
+                                <div class="section-label-sub">【完了した作業】</div>
+                                <ul class="completed-list">
+                                    <li><span class="completed-icon">✓</span> ブランチマイニング第3層の掘削（鉄インゴット4スタックを倉庫Bへ格納）</li>
+                                    <li><span class="completed-icon">✓</span> 鉱山〜中央拠点間のトロッコ鉄道敷設（中間地点まで完了）</li>
+                                </ul>
+                            </div>
+                            <div class="section-next-action">
+                                <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                                <ul class="todo-list">
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>鉄道ターミナル駅の建屋デザインと内装建築</span>
+                                    </li>
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>加速用レッドストーントーチ＆加速レールの増設作業</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- カード4：完了 -->
+                    <a href="report-detail.html?id=4" class="report-card">
+                        <div class="report-card-header">
+                            <div class="report-meta-info">
+                                <span class="report-date">2026/08/05</span>
+                                <span class="report-author">👤 Sakura_Craft</span>
+                            </div>
+                            <span class="status-badge badge-complete">✅ 完了</span>
+                        </div>
+                        <div class="report-card-body">
+                            <div class="section-completed">
+                                <div class="section-label-sub">【完了した作業】</div>
+                                <ul class="completed-list">
+                                    <li><span class="completed-icon">✓</span> 全自動小麦農場・水路詰まりのメンテナンスと耕地打ち直し</li>
+                                    <li><span class="completed-icon">✓</span> 骨粉コンポストへの植物資源の補充</li>
+                                </ul>
+                            </div>
+                            <div class="section-next-action">
+                                <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                                <ul class="todo-list">
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>全施設が正常稼働中のため、次回は定期見回りおよび他プロジェクトの手伝いを予定</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -82,8 +174,54 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="reports.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof REPORTS_DATA !== 'undefined' && REPORTS_DATA.length > 0) {
+                const listEl = document.getElementById('report-list');
+                listEl.innerHTML = REPORTS_DATA.map(report => {
+                    const badgeClass = report.status === 'urgent' ? 'badge-urgent' :
+                                       report.status === 'help' ? 'badge-help' :
+                                       report.status === 'progress' ? 'badge-progress' : 'badge-complete';
+                    const isUrgentClass = report.status === 'urgent' ? 'is-urgent' : '';
+
+                    return `
+                        <a href="report-detail.html?id=${report.id}" class="report-card ${isUrgentClass}">
+                            <div class="report-card-header">
+                                <div class="report-meta-info">
+                                    <span class="report-date">${report.date}</span>
+                                    <span class="report-author">👤 ${report.author}</span>
+                                </div>
+                                <span class="status-badge ${badgeClass}">${report.statusText}</span>
+                            </div>
+                            <div class="report-card-body">
+                                <div class="section-completed">
+                                    <div class="section-label-sub">【完了した作業】</div>
+                                    <ul class="completed-list">
+                                        ${report.completedTasks.map(t => `<li><span class="completed-icon">✓</span> ${t}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div class="section-next-action">
+                                    <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                                    <ul class="todo-list">
+                                        ${report.nextTasks.map(t => `
+                                            <li class="todo-item">
+                                                <span class="todo-checkbox"></span>
+                                                <span>${t}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+            }
+        });
+    </script>
 </body>
 </html>

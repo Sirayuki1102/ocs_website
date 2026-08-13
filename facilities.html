@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理一覧 | OursCraftServer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                OCS
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html" class="active">管理一覧</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+                <a href="members.html">参加者一覧</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>ワールド管理一覧</h1>
+                <p>ワールド内の全体マップ、各種公共施設の使い方・共有ルールをまとめています。</p>
+            </div>
+        </section>
+
+        <!-- ワールドマップ案内 -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">ワールドマップ</h2>
+                <div class="card" style="padding: 30px;">
+                    <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                        <div style="font-size: 3.5rem; line-height: 1;">🗺️</div>
+                        <div style="flex: 1; min-width: 280px;">
+                            <h3>Webリアルタイムマップ（Dynmap / BlueMap）</h3>
+                            <p style="margin: 10px 0 16px; color: var(--text-light);">
+                                ブラウザからワールド全体の様子がわかります。拠点の場所決めや冒険の経路確認にご活用ください。
+                            </p>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                                🌐 Webマップを開く (準備中 / URLを設定)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公共施設・使い方一覧 -->
+        <section class="bg-light">
+            <div class="container">
+                <h2 class="section-title">公共施設＆サービス使い方</h2>
+                <div class="grid" id="facilities-grid">
+                    <!-- facilities.js より自動的にカードが生成されます -->
+
+                    <a href="facility-detail.html?id=1" class="card facility-card">
+                        <div class="card-icon">🏰</div>
+                        <h3>初期スポーン広場</h3>
+                        <p><strong>場所:</strong> X: 0, Z: 0（中央広場）</p>
+                        <p style="margin-top: 8px;">初心者用フリーチェストやエンチャントテーブル、ベッドを完備。どなたでも自由に使用・休憩できます。</p>
+                    </a>
+
+                    <a href="facility-detail.html?id=2" class="card facility-card">
+                        <div class="card-icon">🌾</div>
+                        <h3>共有公共農園</h3>
+                        <p><strong>場所:</strong> スポーン東地区</p>
+                        <p style="margin-top: 8px;">小麦・ジャガイモ・ニンジン・サトウキビなどを自由に収穫可能です。<strong>【ルール】収穫したら必ず種や苗を植え直してください。</strong></p>
+                    </a>
+
+                    <a href="facility-detail.html?id=3" class="card facility-card">
+                        <div class="card-icon">⚒️</div>
+                        <h3>公共製錬所・倉庫</h3>
+                        <p><strong>場所:</strong> スポーン南地区</p>
+                        <p style="margin-top: 8px;">高効率かまどや自動仕分け装置を設置。燃料（石炭・溶岩等）の補充にご協力をお願いします。</p>
+                    </a>
+
+                    <a href="facility-detail.html?id=4" class="card facility-card">
+                        <div class="card-icon">🚈</div>
+                        <h3>中央交通ネットワーク（鉄道・ネザー）</h3>
+                        <p><strong>場所:</strong> スポーン地下1F</p>
+                        <p style="margin-top: 8px;">主要拠点や各プレイヤーの村をつなぐトロッコ・ネザーハイウェイ。トロッコは使ったらチェストに戻してください。</p>
+                    </a>
+
+                    <a href="facility-detail.html?id=5" class="card facility-card">
+                        <div class="card-icon">🧪</div>
+                        <h3>トラップタワー / 経験値トラップ</h3>
+                        <p><strong>場所:</strong> ネザーハブ経由（北バイオーム）</p>
+                        <p style="margin-top: 8px;">修繕やレベル上げに利用可能。長時間AFK（放置）の際は他の方への配慮をお願いいたします。</p>
+                    </a>
+
+                    <a href="facility-detail.html?id=6" class="card facility-card">
+                        <div class="card-icon">🏪</div>
+                        <h3>プレイヤー商店街</h3>
+                        <p><strong>場所:</strong> スポーン西地区</p>
+                        <p style="margin-top: 8px;">プレイヤー同士で素材やエンチャント本を取引できるエリア。出店希望の方は運営までお気軽にご相談ください。</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- マナー・ルール注意書き -->
+        <section>
+            <div class="container text-center">
+                <div class="card" style="max-width: 700px; margin: 0 auto; background-color: var(--primary-light); border: 1px solid var(--primary-color);">
+                    <div class="card-icon" style="font-size: 2.5rem;">📜</div>
+                    <h3 style="color: var(--primary-dark);">公共施設のご利用ルール</h3>
+                    <p style="margin-top: 12px; color: var(--text-color);">
+                        みんなで気持ちよく使うために、<strong>「使ったら元に戻す」「資源の補充にご協力いただく」</strong>ようご協力お願いいたします。壊れてしまった部分や不具合を見つけた場合は、お気軽に運営スタッフまたはDiscordにてご報告ください！
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="facilities.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof FACILITIES_DATA !== 'undefined' && FACILITIES_DATA.length > 0) {
+                const gridEl = document.getElementById('facilities-grid');
+                gridEl.innerHTML = FACILITIES_DATA.map(f => `
+                    <a href="facility-detail.html?id=${f.id}" class="card facility-card">
+                        <div class="card-icon">${f.icon}</div>
+                        <h3>${f.name}</h3>
+                        <p><strong>場所:</strong> ${f.location}</p>
+                        <p style="margin-top: 8px;">${f.summary}</p>
+                    </a>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+
+</html>

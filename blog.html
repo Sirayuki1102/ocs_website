@@ -4,7 +4,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>運営記録（Dev Log） | [サーバー名]</title>
+    <title>運営記録（Dev Log） | OCS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,11 +12,12 @@
         <div class="container nav-inner">
             <a href="index.html" class="logo">
                 <span class="logo-icon">🌿</span>
-                [サーバー名]
+                OCS
             </a>
             <nav class="nav-links">
                 <a href="index.html">ホーム</a>
                 <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html">管理一覧</a>
                 <a href="report.html">作業報告書</a>
                 <a href="blog.html" class="active">運営記録</a>
                 <a href="members.html">参加者一覧</a>
@@ -34,29 +35,11 @@
 
         <section class="bg-light">
             <div class="container">
-                <div class="grid">
-                    <!-- ============================================== -->
-                    <!-- 記事コピペ用テンプレートここから -->
-                    <!-- 新しい記事を追加する時は、以下のブロックをコピーしてコメントアウトを外し、お使いください -->
-                    <!--
-                    <div class="card blog-card">
-                        <img src="https://via.placeholder.com/800x400?text=Image" alt="画像" class="blog-img">
-                        <div class="blog-content">
-                            <div class="blog-meta">
-                                <span>YYYY.MM.DD</span>
-                                <span class="blog-tag">[カテゴリ]</span>
-                            </div>
-                            <h3>記事のタイトルを入力</h3>
-                            <p class="blog-excerpt">記事の抜粋や本文をここに入力してください。</p>
-                            <div class="blog-author">投稿者：お名前</div>
-                        </div>
-                    </div>
-                    -->
-                    <!-- 記事コピペ用テンプレートここまで -->
-                    <!-- ============================================== -->
-
-                    <!-- 記事1 -->
-                    <div class="card blog-card">
+                <div class="grid" id="blog-grid">
+                    <!-- posts.js のデータから自動的にカードが読み込まれます -->
+                    
+                    <!-- フォールバック（標準表示） -->
+                    <a href="blog-detail.html?id=1" class="card blog-card">
                         <img src="https://via.placeholder.com/800x400?text=Update" alt="Update" class="blog-img">
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -67,10 +50,9 @@
                             <p class="blog-excerpt">プレイヤーの増加に伴い、新しい生活エリアを開放しました。また、初期スポーン地点のデザインもリニューアルし、より快適に始められるようになっています。</p>
                             <div class="blog-author">投稿者：運営スタッフ</div>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- 記事2 -->
-                    <div class="card blog-card">
+                    <a href="blog-detail.html?id=2" class="card blog-card">
                         <img src="https://via.placeholder.com/800x400?text=Dev+Log" alt="Dev Log" class="blog-img">
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -81,10 +63,9 @@
                             <p class="blog-excerpt">最近発生していたラグの対策として、サーバーの最適化と不要な処理の削減を行いました。今回の技術的な裏話を少しだけご紹介します。</p>
                             <div class="blog-author">投稿者：運営スタッフ</div>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- 記事3 -->
-                    <div class="card blog-card">
+                    <a href="blog-detail.html?id=3" class="card blog-card">
                         <img src="https://via.placeholder.com/800x400?text=Event" alt="Event" class="blog-img">
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -95,7 +76,7 @@
                             <p class="blog-excerpt">テーマは「自然と調和する家」。皆さんの自慢の建築を披露するチャンスです！優秀賞には特別な称号とアイテムをプレゼントします。</p>
                             <div class="blog-author">投稿者：運営スタッフ</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -103,8 +84,32 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="posts.js"></script>
+    <script>
+        // JavaScriptが有効な場合、posts.js のデータから一覧を自動動的生成します
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof BLOG_POSTS !== 'undefined' && BLOG_POSTS.length > 0) {
+                const gridEl = document.getElementById('blog-grid');
+                gridEl.innerHTML = BLOG_POSTS.map(post => `
+                    <a href="blog-detail.html?id=${post.id}" class="card blog-card">
+                        <img src="${post.image}" alt="${post.title}" class="blog-img">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>${post.date}</span>
+                                <span class="blog-tag">${post.tag}</span>
+                            </div>
+                            <h3>${post.title}</h3>
+                            <p class="blog-excerpt">${post.excerpt}</p>
+                            <div class="blog-author">投稿者：${post.author}</div>
+                        </div>
+                    </a>
+                `).join('');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">作業報告書詳細 | OCS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                OCS
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html">管理一覧</a>
+                <a href="report.html" class="active">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+                <a href="members.html">参加者一覧</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>ワールド作業報告書 (Daily Reports)</h1>
+                <p>作業の詳細状況・引き継ぎメモ・資材の募集要項です</p>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container">
+                <div class="report-detail-wrapper" id="report-container">
+                    <div style="margin-bottom: 24px;">
+                        <a href="report.html" class="btn btn-outline back-link">← 作業報告書一覧へ戻る</a>
+                    </div>
+
+                    <!-- 報告コンテンツがJavaScriptによって表示されます -->
+                    <div id="report-content">
+                        <p style="text-align: center; padding: 40px 0;">報告書を読み込んでいます...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="reports.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const reportId = urlParams.get('id');
+            const contentEl = document.getElementById('report-content');
+            const pageTitleEl = document.getElementById('page-title');
+
+            const report = REPORTS_DATA.find(r => r.id === reportId);
+
+            if (!report) {
+                pageTitleEl.textContent = '報告書が見つかりません | OCS';
+                contentEl.innerHTML = `
+                    <div style="text-align: center; padding: 40px 0;">
+                        <h2 style="margin-bottom: 16px;">報告書が見つかりませんでした</h2>
+                        <p style="margin-bottom: 24px; color: var(--text-light);">指定された報告ログは存在しないか、削除された可能性があります。</p>
+                        <a href="report.html" class="btn btn-primary">作業報告書一覧へ戻る</a>
+                    </div>
+                `;
+                return;
+            }
+
+            const badgeClass = report.status === 'urgent' ? 'badge-urgent' :
+                               report.status === 'help' ? 'badge-help' :
+                               report.status === 'progress' ? 'badge-progress' : 'badge-complete';
+
+            const isUrgentClass = report.status === 'urgent' ? 'is-urgent' : '';
+
+            pageTitleEl.textContent = `${report.title} | 作業報告書 | OCS`;
+            contentEl.innerHTML = `
+                <article class="report-card ${isUrgentClass}" style="box-shadow: none;">
+                    <div class="report-card-header">
+                        <div class="report-meta-info">
+                            <span class="report-date">${report.date}</span>
+                            <span class="report-author">👤 ${report.author}</span>
+                        </div>
+                        <span class="status-badge ${badgeClass}">${report.statusText}</span>
+                    </div>
+
+                    <h2 class="report-detail-heading">${report.title}</h2>
+                    ${report.location ? `<div class="report-location-badge">📍 作業場所: ${report.location}</div>` : ''}
+
+                    <div class="report-card-body" style="margin-top: 20px;">
+                        <div class="section-completed">
+                            <div class="section-label-sub">【完了した作業】</div>
+                            <ul class="completed-list">
+                                ${report.completedTasks.map(task => `<li><span class="completed-icon">✓</span> ${task}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="section-next-action">
+                            <div class="section-label-main">🎯【次回実施内容（次にやること）】</div>
+                            <ul class="todo-list">
+                                ${report.nextTasks.map(task => `
+                                    <li class="todo-item">
+                                        <span class="todo-checkbox"></span>
+                                        <span>${task}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        ${report.details ? `
+                            <div class="report-detail-body">
+                                ${report.details}
+                            </div>
+                        ` : ''}
+                    </div>
+                </article>
+
+                <div style="margin-top: 32px; text-align: center;">
+                    <a href="report.html" class="btn btn-primary">一覧へ戻る</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">施設詳細 | OursCraftServer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                OCS
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html" class="active">管理一覧</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html">運営記録</a>
+                <a href="members.html">参加者一覧</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>公共施設＆サービス使い方</h1>
+                <p>ワールド内の公共施設・共有サービスの詳細な使い方やルール案内です</p>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container">
+                <article class="blog-detail-container">
+                    <a href="facilities.html" class="btn btn-outline back-link">← 管理一覧へ戻る</a>
+                    
+                    <div id="facility-content">
+                        <p style="text-align: center; padding: 40px 0;">施設情報を読み込んでいます...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="facilities.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const facilityId = urlParams.get('id');
+            const facilityContentEl = document.getElementById('facility-content');
+            const pageTitleEl = document.getElementById('page-title');
+
+            const facility = FACILITIES_DATA.find(f => f.id === facilityId);
+
+            if (!facility) {
+                pageTitleEl.textContent = '施設が見つかりません | OursCraftServer';
+                facilityContentEl.innerHTML = `
+                    <div style="text-align: center; padding: 40px 0;">
+                        <h2 style="margin-bottom: 16px;">施設情報が見つかりませんでした</h2>
+                        <p style="margin-bottom: 24px; color: var(--text-light);">指定された施設は存在しないか、変更された可能性があります。</p>
+                        <a href="facilities.html" class="btn btn-primary">管理一覧へ戻る</a>
+                    </div>
+                `;
+                return;
+            }
+
+            pageTitleEl.textContent = `${facility.name} | 管理一覧 | OursCraftServer`;
+            facilityContentEl.innerHTML = `
+                <div class="blog-detail-header">
+                    <div style="font-size: 3rem; margin-bottom: 12px;">${facility.icon}</div>
+                    <h2 class="blog-detail-title">${facility.name}</h2>
+                    <div style="font-weight: bold; color: var(--primary-dark); margin-top: 8px;">
+                        📍 場所: ${facility.location}
+                    </div>
+                </div>
+
+                <div class="blog-detail-body">
+                    ${facility.content}
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <a href="facilities.html" class="btn btn-primary">管理一覧へ戻る</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

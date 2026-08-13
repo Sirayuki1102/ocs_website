@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">運営記録 | OCS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                OCS
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="guide.html">初心者ガイド</a>
+                <a href="facilities.html">管理一覧</a>
+                <a href="report.html">作業報告書</a>
+                <a href="blog.html" class="active">運営記録</a>
+                <a href="members.html">参加者一覧</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>運営記録（Dev Log）</h1>
+                <p>アプデ情報、開発の裏側、サーバーの日常をお届けします</p>
+            </div>
+        </section>
+
+        <section class="bg-light">
+            <div class="container">
+                <article class="blog-detail-container" id="post-container">
+                    <a href="blog.html" class="btn btn-outline back-link">← 運営記録一覧へ戻る</a>
+                    
+                    <!-- 記事コンテンツがJavaScriptによってここに表示されます -->
+                    <div id="post-content">
+                        <p style="text-align: center; padding: 40px 0;">記事を読み込んでいます...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="posts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            const postContentEl = document.getElementById('post-content');
+            const pageTitleEl = document.getElementById('page-title');
+
+            const post = BLOG_POSTS.find(p => p.id === postId);
+
+            if (!post) {
+                pageTitleEl.textContent = '記事が見つかりません | 運営記録 | OCS';
+                postContentEl.innerHTML = `
+                    <div style="text-align: center; padding: 40px 0;">
+                        <h2 style="margin-bottom: 16px;">記事が見つかりませんでした</h2>
+                        <p style="margin-bottom: 24px; color: var(--text-light);">指定された記事は存在しないか、削除された可能性があります。</p>
+                        <a href="blog.html" class="btn btn-primary">運営記録一覧へ戻る</a>
+                    </div>
+                `;
+                return;
+            }
+
+            pageTitleEl.textContent = `${post.title} | 運営記録 | OCS`;
+            postContentEl.innerHTML = `
+                <div class="blog-detail-header">
+                    <div class="blog-meta">
+                        <span>${post.date}</span>
+                        <span class="blog-tag">${post.tag}</span>
+                    </div>
+                    <h2 class="blog-detail-title">${post.title}</h2>
+                    <div class="blog-author">投稿者：${post.author}</div>
+                </div>
+
+                <div class="blog-detail-image-wrapper">
+                    <img src="${post.image}" alt="${post.title}" class="blog-detail-img">
+                </div>
+
+                <div class="blog-detail-body">
+                    ${post.content}
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <a href="blog.html" class="btn btn-primary">一覧へ戻る</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

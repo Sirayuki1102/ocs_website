@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta name="robots" content="noindex, nofollow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初心者ガイド & 接続方法 | [サーバー名]</title>
+    <title>初心者ガイド & 接続方法 | OCS</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="container nav-inner">
             <a href="index.html" class="logo">
                 <span class="logo-icon">🌿</span>
-                [サーバー名]
+                OCS
             </a>
             <nav class="nav-links">
                 <a href="index.html">ホーム</a>
                 <a href="guide.html" class="active">初心者ガイド</a>
+                <a href="facilities.html">管理一覧</a>
                 <a href="report.html">作業報告書</a>
                 <a href="blog.html">運営記録</a>
                 <a href="members.html">参加者一覧</a>
@@ -41,7 +44,7 @@
                     </p>
                     <div class="info-row">
                         <span class="info-label">サーバー名</span>
-                        <span class="info-value">[サーバー名] (自由に入力可)</span>
+                        <span class="info-value">OCS (自由に入力可)</span>
                     </div>
                     <div class="info-row">
                         <span class="info-label">IPアドレス</span>
@@ -58,8 +61,48 @@
                         </span>
                     </div>
                 </div>
+                <div class="text-center" style="margin-top: 25px;">
+                    <a href="https://forms.gle/your-form-url" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-whitelist" style="width: 100%; max-width: 400px;">📋 ホワイトリスト申請フォームはこちら</a>
+                </div>
             </div>
         </section>
+
+        <!-- Switch接続ガイド -->
+        <section style="padding-top: 0;">
+            <div class="container">
+                <div class="card" style="border-left: 5px solid #e60012;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 2rem;">🎮</span>
+                        <h3 style="margin: 0; color: #e60012;">Nintendo Switchから参加する方法</h3>
+                    </div>
+                    <p style="margin-bottom: 16px;">
+                        Nintendo Switch版マインクラフトでは、通常外部サーバーの直接追加メニューが表示されないため、DNS設定を変更して接続します。
+                    </p>
+
+                    <ol style="padding-left: 20px; line-height: 2.0;">
+                        <li>Switchの「設定」 ＞ 「インターネット」 ＞ 「インターネット設定」を開く</li>
+                        <li>接続しているWi-Fiを選び、「設定の変更」を選択</li>
+                        <li>「DNS設定」を「手動」に変更</li>
+                        <li><strong>優先DNS:</strong> <code>104.238.130.180</code> (サーバー参加用DNS)を入力</li>
+                        <li><strong>代替DNS:</strong> <code>008.008.008.008 (GoogleDNS)</code> または
+                            <code>001.001.001.001(Cloudflare)</code>
+                            を入力し保存
+                        </li>
+                        <li>マインクラフトを起動し、「サーバー」タブから公式提供サーバーのどれかに接続</li>
+                        <li>サーバーリスト（BedrockConnect）画面が立ち上がるので、「Direct Connect」から上記のIPアドレスを入力</li>
+                        <li>サーバーポートは変更しない</li>
+                        <li>サーバーリストに追加しておくと便利</li>
+                    </ol>
+
+                    <p style="margin-top: 16px; color: #888; font-size: 0.9rem;">
+                        ※上記のDNS情報は、ネットワーク環境によって接続できない場合があります。その際は、運営にご相談ください。<br>
+                        ※ 引用元：https://github.com/Pugmatt/BedrockConnect
+                    </p>
+                </div>
+            </div>
+        </section>
+
 
         <section class="bg-light">
             <div class="container">
@@ -69,21 +112,27 @@
                         <div class="step-number">Step 1</div>
                         <div class="step-content">
                             <h3>初期スポーン地点の案内看板を確認</h3>
-                            <p>サーバーに入ると、安全な初期スポーン地点から始まります。まずは近くにある案内看板を読んで、基本的なルールや施設の場所を確認しましょう。</p>
+                            <p>サーバーに入ると、0, 0, 0から始まります。まずは近くにある案内看板を読んで、拠点へレッツゴー！！</p>
                         </div>
                     </div>
                     <div class="card step-item">
                         <div class="step-number">Step 2</div>
                         <div class="step-content">
-                            <h3>近くにいるスタッフやプレイヤーにあいさつしてみよう！</h3>
-                            <p>アットホームな雰囲気が特徴のサーバーです。チャットで「こんにちは！」と挨拶すれば、先輩プレイヤーが温かく迎えてくれますよ。</p>
+                            <h3>プレイヤーにあいさつしてみよう！</h3>
+                            <p>
+                                アットホームな雰囲気が特徴のサーバーです。チャットで「こんにちは！」と挨拶すれば、プレイヤーが温かく迎えてくれます。<br>
+                                (人が居ればね...)
+                            </p>
                         </div>
                     </div>
                     <div class="card step-item">
                         <div class="step-number">Step 3</div>
                         <div class="step-content">
-                            <h3>自分の生活エリアを決めて自由なマイクラライフをスタート！</h3>
-                            <p>スポーン地点から離れて、建築や農業に適したお気に入りの場所を見つけましょう。複雑なルールはないので、バニラ本来の自由なサバイバルを楽しんでください。</p>
+                            <h3>自由なマイクラライフをスタート！</h3>
+                            <p>
+                                複雑なルールはないので、バニラ本来の自由なサバイバルを楽しんでください。<br>
+                                都市部に住みたい場合は運営に聞いてみよう！
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -104,11 +153,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 [サーバー名] All Rights Reserved.</p>
+            <p>&copy; 2022 OursCraftServer All Rights Reserved.</p>
         </div>
     </footer>
 
     <div id="toast">コピーしました！</div>
     <script src="main.js"></script>
 </body>
+
 </html>
